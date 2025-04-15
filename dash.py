@@ -98,11 +98,6 @@ indice = yf.download(ticker_indice, start=data_inicio)['Close']
 print(indice)
 indice = indice.reindex(nh_nl.index)
 
-# #Garantir Series 1D para DataFrame final
-# indice = pd.Series(indice, name=indice_opcao)
-# nh_nl = pd.Series(nh_nl, name='NH-NL')
-# nh_nl_ma = pd.Series(nh_nl_ma, name='Média Móvel')
-
 # Gráfico com Plotly
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=nh_nl.index, y=nh_nl, mode='lines+markers', name='NH-NL', line=dict(color='cyan')))
